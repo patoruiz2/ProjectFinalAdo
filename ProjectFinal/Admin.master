@@ -1,0 +1,22 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="ProjectFinal.Admin" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+</asp:ContentPlaceHolder>       
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <link href="Content/Site.css" rel="stylesheet" />
+
+<div class="sidebar">
+    <center>
+        <img src="https://definicion.de/wp-content/uploads/2019/06/perfildeusuario.jpg" id="usuario" />
+        <h4>Username</h4>
+    </center>
+    <a href="/Admin/usuarios"> <i class="fa fa-users"></i> <span> Usuarios </span> </a>
+    <a href="/Admin/pagos"> <i class="fa fa-money-check-alt"></i> <span> Pagos </span> </a>
+    <a href="/Admin/contacto"> <i class="fa fa-address-book"></i> <span> Contacto </span> </a>
+    <a href="#"> <i class="fa fa-info-circle"></i> <span> Información </span> </a>
+    <a href="#"> <i class="fa fa-cog"></i> <span> Opciones </span> </a>
+    <a href="#"> <i class="fa fa-sign-out-alt"></i> <span> Cerrar Sesión </span> </a>
+</div>
+
+</asp:Content>

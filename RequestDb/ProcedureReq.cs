@@ -85,6 +85,33 @@ namespace RequestDb
         //    return user;
 
         //}
+
+        public List<UserET>  listOne() 
+        {
+            //DataTable dtblusuario = new DataTable();
+
+            //{
+
+            //SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM usuario", sqlCon);
+            //sqlDa.Fill(dtblusuario);
+            //}
+            //return ;
+
+            DataTable table = acces.Read("SELECT * FROM usuario",null);
+            var view = table.Rows[0];
+            List<UserET> user = new List<UserET>();
+            UserET users = new UserET();
+            users.id = Convert.ToInt32(view["id"]);
+            users.nombre = view["nombre"].ToString();
+            users.password = view["password"].ToString();
+            users.email = view["email"].ToString();
+            users.idRol = Convert.ToInt32(view["idRol"]);
+            user.Add(users);
+
+
+            return user;
+        }
+
        
     }
 }

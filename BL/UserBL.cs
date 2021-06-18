@@ -21,5 +21,12 @@ namespace BL
         {
             return request.Login( nombre, password);
         }
+
+        public List<UserET> listOne() 
+        {
+            return request.listOne();
+        }
     }
+
+
 }

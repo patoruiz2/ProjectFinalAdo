@@ -34,7 +34,7 @@ namespace DAL
             DataTable table = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter();
 
-            adapter.SelectCommand = NewSqlCommand(procedure, parameters);
+            adapter.SelectCommand = NewSqlCommandT(procedure, parameters);
             adapter.Fill(table);
 
             Close();
@@ -87,6 +87,24 @@ namespace DAL
             //}
 
             if (Lparam.Any())
+            {
+                command.Parameters.AddRange(Lparam.ToArray());
+            }
+            return command;
+        }
+
+        private SqlCommand NewSqlCommandT(string procedure, List<SqlParameter> Lparam = null)
+        {
+            SqlCommand command = new SqlCommand();
+            command.Connection = connect;
+            command.CommandText = procedure;
+            command.CommandType = CommandType.Text;
+            //if(reader != null)
+            //{
+            //    reader = command.ExecuteReader();
+            //}
+
+            if (Lparam != null && Lparam.Count > 0)
             {
                 command.Parameters.AddRange(Lparam.ToArray());
             }

@@ -13,13 +13,18 @@ namespace ProjectFinal
         private UserBL user = new UserBL();
         protected void Page_Load(object sender, EventArgs e)
         {
-            Render();
+            
+           Render();
         }
 
         public void Render()
         {
-            GridView1.DataSource = user.List();
-            GridView1.DataBind();
+            
+           GridView1.DataSource = user.listOne();
+           GridView1.DataBind();
         }
+
+        
     }
+
 }
